@@ -1,11 +1,15 @@
-import './App.css';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import EmployeeList from './components/EmployeeList';
+import EmployeeEdit from './components/EmployeeEdit';
 
-function App() {
-    return (
-        <div className="App">
-            <p>Hello World</p>
-        </div>
-    );
-}
+const App = () => (
+  <div className="container">
+    <Routes>
+      <Route path="/" element={<EmployeeList />} />
+      <Route path="/edit/:id" element={<EmployeeEdit />} />
+    </Routes>
+  </div>
+);
 
 export default App;
